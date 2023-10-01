@@ -17,7 +17,7 @@ class $modify(PlayerObject) {
     // Create robert if it doesn't exist in scene
     if (!this->getChildByID("robert-topala")) {
       RobertTopala = CCSprite::create("RobertTopala.png"_spr);
-	  RobertTopala->setID("robert-topala");
+	    RobertTopala->setID("robert-topala");
       CCSize winSize = CCDirector::get()->getWinSize();
 
       RobertTopala->setPosition({winSize.width / 2, winSize.height / 2});
@@ -32,10 +32,9 @@ class $modify(PlayerObject) {
       RobertTopala->stopActionByTag(1);
     }
 
-	// Ensure opacity is 255
+	  // Ensure opacity is 255
     RobertTopala->setOpacity(255);
     // Fade out robert
     RobertTopala->runAction(CCFadeOut::create(1.0))->setTag(1);
-    ;
   }
 };
