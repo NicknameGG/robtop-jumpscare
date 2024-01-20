@@ -5,27 +5,28 @@ using namespace geode::prelude;
 
 CCSprite *RobertTopala = nullptr;
 
-class $modify(PlayerObject) {
+class $modify( PlayerObject ) {
 
-  void incrementJumps() {
-    PlayerObject::incrementJumps();
+  TodoReturn pushButton(PlayerButton p0) {
+    PlayerObject::pushButton(p0);
 
     // Do nothing if PlayLayer doesnt exist
     if (!GameManager::sharedState()->getPlayLayer())
       return;
 
+    const auto runningScene = CCDirector::get()->getRunningScene();
+
     // Create robert if it doesn't exist in scene
-    if (!this->getChildByID("robert-topala")) {
+    if (!runningScene->getChildByID("robert-topala")) {
       RobertTopala = CCSprite::create("RobertTopala.png"_spr);
 	    RobertTopala->setID("robert-topala");
       CCSize winSize = CCDirector::get()->getWinSize();
 
       RobertTopala->setPosition({winSize.width / 2, winSize.height / 2});
-      RobertTopala->setScale(3);
-      CCDirector::get()->getRunningScene()->addChild(RobertTopala, 100);
+      runningScene->addChild(RobertTopala, 100);
     }
 
-    GameSoundManager::get()->playEffect("vine-boom.mp3"_spr, 1, 0, 1);
+    FMODAudioEngine::sharedEngine()->playEffect("vine-boom.mp3"_spr);
 
     // If action is running stop it
     if (RobertTopala->getActionByTag(1)) {
