@@ -4,10 +4,9 @@
 using namespace geode::prelude;
 
 CCSprite *RobertTopala = nullptr;
+bool isHolding = false;
 
 class $modify(PlayerObject) {
-
-  bool isHolding = false;
 
   void jumpscare() {
     FMODAudioEngine::sharedEngine()->playEffect("vine-boom.mp3"_spr);
@@ -29,13 +28,13 @@ class $modify(PlayerObject) {
     if (p0 != PlayerButton::Jump)
       return;
 
-    m_fields->isHolding = false;
+    isHolding = false;
   }
 
   void incrementJumps() {
     // Check if robert exists and if the user is holding jump (Works only for the cube)
     const auto runningScene = CCDirector::get()->getRunningScene();
-    if (runningScene->getChildByID("robert-topala") && m_fields->isHolding) {
+    if (runningScene->getChildByID("robert-topala") && isHolding) {
       this->jumpscare();
     }
   }
@@ -46,7 +45,7 @@ class $modify(PlayerObject) {
     if (p0 != PlayerButton::Jump)
       return;
 
-    m_fields->isHolding = true;
+    isHolding = true;
 
     // Do nothing if PlayLayer doesnt exist
     if (!GameManager::sharedState()->getPlayLayer())
