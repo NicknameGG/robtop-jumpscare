@@ -1,6 +1,6 @@
 {
 	"geode": "2.0.0",
-	"version": "v1.1.0",
+	"version": "v1.2.0",
 	"id": "n.robtop-jumpscare",
 	"name": "Robtop Jumpscare",
 	"developer": "n",
@@ -14,5 +14,13 @@
 			"resources/*.mp3",
 			"resources/*.png"
 		]
+	},
+	"settings": {
+		"randomize-jumpscare": {
+			"name": "Randomize Jumpscare",
+			"description": "Jumpscares happen with a 1% chance instead of a 100% chance when enabled.",
+			"type": "bool",
+			"default": false
+		}
 	}
 }

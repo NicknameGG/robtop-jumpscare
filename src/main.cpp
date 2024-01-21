@@ -32,12 +32,18 @@ class $modify(PlayerObject) {
   }
 
   void incrementJumps() {
-    // Check if robert exists and if the user is holding jump (Works only for the cube)
-    const auto runningScene = CCDirector::get()->getRunningScene();
-    if (runningScene->getChildByID("robert-topala") && isHolding) {
-      this->jumpscare();
-    }
+    // Check if randomizing is enabled
+    auto randomizeOption = Mod::get()->getSettingValue<bool>("randomize-jumpscare");
+    
+    // increment jump jumpscares only happen if randomization is disabled.
+    if (randomizeOption == false) {
+      // Check if robert exists and if the user is holding jump (Works only for the cube)
+      const auto runningScene = CCDirector::get()->getRunningScene();
+      if (runningScene->getChildByID("robert-topala") && isHolding) {
+        this->jumpscare();
+      }
   }
+    }
 
   TodoReturn pushButton(PlayerButton p0) {
     PlayerObject::pushButton(p0);
@@ -50,6 +56,14 @@ class $modify(PlayerObject) {
     // Do nothing if PlayLayer doesnt exist
     if (!GameManager::sharedState()->getPlayLayer())
       return;
+
+    // Check if randomizing is enabled
+     auto randomizeOption = Mod::get()->getSettingValue<bool>("randomize-jumpscare");
+
+        // if randomize is turned on then there is 1 in 100 chance of the jumpscare
+    if (randomizeOption && (rand() % 100 != 0)) {
+      return;
+    }
 
     const auto runningScene = CCDirector::get()->getRunningScene();
 
