@@ -2,7 +2,7 @@
 
 Get jumpscared **every time you jump** by the Robert Topala!
 
-![robert](n.robtop-jumpscare/RobertTopala.png)
+![robert](resources/RobertTopala.png)
 
 ## Features:
 - Robtop might now appear with a 1% chance while youre playing! Check the mod settings to activate it

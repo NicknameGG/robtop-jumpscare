@@ -5,12 +5,10 @@ using namespace geode::prelude;
 
 CCSprite *RobertTopala = nullptr;
 bool isHolding = false;
-bool wasLastPushInAir = false;
 
 class $modify(PlayerObject) {
 
   void jumpscare() {
-    geode::log::info("Jumpscare called");
     // Check if randomizing is enabled
     auto randomizeOption = Mod::get()->getSettingValue<bool>("randomize-jumpscare");
 
@@ -33,7 +31,6 @@ class $modify(PlayerObject) {
   }
 
   void playerDestroyed(bool p0) {
-    geode::log::info("========== Player destroyed ==========");
     PlayerObject::playerDestroyed(p0);
     isHolding = false;
   }
@@ -55,19 +52,13 @@ class $modify(PlayerObject) {
     if (randomizeOption == false) {
         // Check if robert exists and if the user is holding jump (Works only for the cube)
         const auto runningScene = CCDirector::get()->getRunningScene();
-          geode::log::info("Incrementing jumps able to jumpscare, {}", wasLastPushInAir);
-
-        if (runningScene->getChildByID("robert-topala") && isHolding && !wasLastPushInAir) {
+        if (runningScene->getChildByID("robert-topala") && isHolding) {
           this->jumpscare();
         }
     }
-
-    wasLastPushInAir = false;
   }
 
   TodoReturn pushButton(PlayerButton p0) {
-    geode::log::info("Pushing button");
-    wasLastPushInAir = !this->m_isOnGround;
     
     PlayerObject::pushButton(p0);
 
@@ -101,7 +92,6 @@ class $modify(PlayerObject) {
       // Set robert opacity to 0
       RobertTopala->setOpacity(0);
     }
-
 
     this->jumpscare();
 
