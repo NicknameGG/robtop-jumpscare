@@ -94,7 +94,5 @@ class $modify(PlayerObject) {
     }
 
     this->jumpscare();
-
-    geode::log::info("End of pushButton");
   }
 };
