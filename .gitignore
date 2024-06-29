@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Prerequisites
 *.d
 
@@ -59,3 +60,8 @@ build-*/
 
 # CLion
 /cmake-build-*/
+=======
+.vs/
+.github/
+out/
+>>>>>>> 762b9c624060a508ae804bdeb07ca98c62a4f52f
