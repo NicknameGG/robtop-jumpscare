@@ -35,7 +35,7 @@ class $modify(PlayerObject) {
     isHolding = false;
   }
 
-  TodoReturn releaseButton(PlayerButton p0) {
+  void releaseButton(PlayerButton p0) {
     PlayerObject::releaseButton(p0);
 
     if (p0 != PlayerButton::Jump)
@@ -58,7 +58,7 @@ class $modify(PlayerObject) {
     }
   }
 
-  TodoReturn pushButton(PlayerButton p0) {
+  void pushButton(PlayerButton p0) {
     
     PlayerObject::pushButton(p0);
 
