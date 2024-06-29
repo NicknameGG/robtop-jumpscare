@@ -59,7 +59,7 @@ class $modify(PlayerObject) {
     }
   }
 
-  TodoReturn pushButton(PlayerButton p0) {
+  void pushButton(PlayerButton p0) {
     
     PlayerObject::pushButton(p0);
 
