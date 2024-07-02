@@ -28,5 +28,11 @@
 			"type": "bool",
 			"default": false
 		}
+		"randomize-jumpscare-chance": {
+			"name": "Jumpscare Chance",
+			"description": "Change jumpscare chance.",
+			"type": "double",
+			"default": 1
+		}
 	}
 }
