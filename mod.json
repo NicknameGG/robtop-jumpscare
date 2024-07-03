@@ -11,7 +11,7 @@
 	],
 	"id": "n.robtop-jumpscare",
 	"name": "Robtop Jumpscare",
-	"version": "v1.3.2",
+	"version": "v1.3.3",
 	"developer": "n",
 	"description": "Jumpscare yourself everytime you jump!",
 	"repository": "https://github.com/NicknameGG/robtop-jumpscare",
@@ -27,7 +27,7 @@
 			"description": "Jumpscares happen with a 1% chance instead of a 100% chance when enabled.",
 			"type": "bool",
 			"default": false
-		}
+		},
 		"randomize-jumpscare-chance": {
 			"name": "Jumpscare Chance",
 			"description": "Change jumpscare chance.",
