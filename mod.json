@@ -31,8 +31,10 @@
 		"randomize-jumpscare-chance": {
 			"name": "Jumpscare Chance",
 			"description": "Change jumpscare chance.",
-			"type": "double",
-			"default": 1
+			"type": "float",
+			"default": 1,
+			"min": 0,
+			"max": 100
 		}
 	}
 }
