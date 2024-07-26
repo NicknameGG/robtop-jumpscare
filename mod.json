@@ -1,5 +1,5 @@
 {
-	"geode": "3.0.0",
+	"geode": "3.2.0",
 	"gd": {
 		"win": "2.206",
 		"android": "2.206",
@@ -11,7 +11,7 @@
 	],
 	"id": "n.robtop-jumpscare",
 	"name": "Robtop Jumpscare",
-	"version": "v1.3.3",
+	"version": "v1.3.4",
 	"developer": "n",
 	"description": "Jumpscare yourself everytime you jump!",
 	"repository": "https://github.com/NicknameGG/robtop-jumpscare",
