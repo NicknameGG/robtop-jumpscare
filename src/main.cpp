@@ -57,6 +57,8 @@ class $modify(PlayerObject) {
         this->jumpscare();
       }
     }
+
+    PlayerObject::incrementJumps();
   }
 
   void pushButton(PlayerButton p0) {
