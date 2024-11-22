@@ -48,6 +48,7 @@ class $modify(PlayerObject) {
       return ret;
 
     isHolding = false;
+    return false;
   }
 
   void incrementJumps() {
@@ -101,5 +102,6 @@ class $modify(PlayerObject) {
     }
 
     this->jumpscare();
+    return false;
   }
 };
