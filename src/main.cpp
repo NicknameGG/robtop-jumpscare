@@ -36,10 +36,9 @@ class $modify(PlayerObject) {
     isHolding = false;
   }*/
 
-  bool playerDestroyed(bool p0) {
-    bool ret = PlayerObject::playerDestroyed(p0);
+  void playerDestroyed(bool p0) {
+    PlayerObject::playerDestroyed(p0);
     isHolding = false;
-    return ret;
   }
 
   bool releaseButton(PlayerButton p0) {
