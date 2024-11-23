@@ -31,18 +31,24 @@ class $modify(PlayerObject) {
     RobertTopala->runAction(CCFadeOut::create(1.0))->setTag(1);
   }
 
+  /*void playerDestroyed(bool p0) {
+    PlayerObject::playerDestroyed(p0);
+    isHolding = false;
+  }*/
+
   void playerDestroyed(bool p0) {
     PlayerObject::playerDestroyed(p0);
     isHolding = false;
   }
 
-  void releaseButton(PlayerButton p0) {
-    PlayerObject::releaseButton(p0);
+  bool releaseButton(PlayerButton p0) {
+    bool ret = PlayerObject::releaseButton(p0);
 
     if (p0 != PlayerButton::Jump)
-      return;
+      return ret;
 
     isHolding = false;
+    return false;
   }
 
   void incrementJumps() {
@@ -61,18 +67,17 @@ class $modify(PlayerObject) {
     PlayerObject::incrementJumps();
   }
 
-  void pushButton(PlayerButton p0) {
-    
-    PlayerObject::pushButton(p0);
+  bool pushButton(PlayerButton p0) {
+    bool ret = PlayerObject::pushButton(p0);
 
     if (p0 != PlayerButton::Jump)
-      return;
+      return ret;
 
     isHolding = true;
 
     // Do nothing if PlayLayer doesnt exist
     if (!GameManager::sharedState()->getPlayLayer())
-      return;
+      return ret;
 
     const auto runningScene = CCDirector::get()->getRunningScene();
 
@@ -97,5 +102,6 @@ class $modify(PlayerObject) {
     }
 
     this->jumpscare();
+    return false;
   }
 };
