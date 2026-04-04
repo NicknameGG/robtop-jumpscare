@@ -26,13 +26,14 @@
 	"settings": {
 		"randomize-jumpscare": {
 			"name": "Randomize Jumpscare",
-			"description": "Jumpscares happen with a 1% chance instead of a 100% chance when enabled.",
+			"description": "Jumpscares happen with a configurable chance instead of a 100% chance when disabled.",
 			"type": "bool",
 			"default": false
 		},
 		"randomize-jumpscare-chance": {
 			"name": "Jumpscare Chance",
 			"description": "Change jumpscare chance. (Set to -1 to fully disable.)",
+			"enable-if": "setting:randomize-jumpscare",
 			"type": "float",
 			"default": 1,
 			"min": -1,
