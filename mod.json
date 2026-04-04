@@ -1,20 +1,22 @@
 {
-	"geode": "4.0.1",
+	"geode": "5.5.3",
 	"gd": {
-		"win": "2.2074",
-		"android": "2.2074",
-		"mac": "2.2074",
-		"ios": "2.2074"
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
 	},
 	"tags": [
 		"joke"
 	],
 	"id": "n.robtop-jumpscare",
 	"name": "Robtop Jumpscare",
-	"version": "v1.3.8",
+	"version": "v1.3.9",
 	"developer": "n",
 	"description": "Jumpscare yourself everytime you jump!",
-	"repository": "https://github.com/NicknameGG/robtop-jumpscare",
+	"links": {
+		"source": "https://github.com/NicknameGG/robtop-jumpscare"
+	},
 	"resources": {
 		"files": [
 			"resources/*.mp3",
